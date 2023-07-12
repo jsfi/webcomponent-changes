@@ -1,0 +1,14 @@
+html {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.num-component {
+  display: block;
+  padding: 0 1rem;
+  border: 1px solid;
+  border-radius: 0.25rem;
+}
+
+.num-component__text {
+  font-size: 1.25rem;
+}
