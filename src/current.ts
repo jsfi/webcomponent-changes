@@ -41,14 +41,16 @@ class NumComponent extends SprdHTMLElement {
   }
 
   render() {
-    render(
-      html`<p class="${this.block}__text">
-          Hello from current-num-component: ${this._num}
-        </p>
-        <current-mul2-component></current-mul2-component>
-        <current-num-control></current-num-control>`,
-      this
-    );
+    if (this.loaded) {
+      render(
+        html`<p class="${this.block}__text">
+            Hello from current-num-component: ${this._num}
+          </p>
+          <current-mul2-component></current-mul2-component>
+          <current-num-control></current-num-control>`,
+        this
+      );
+    }
   }
 
   static get tag() {
@@ -72,12 +74,14 @@ class Mul2Component extends SprdHTMLElement {
   }
 
   render() {
-    render(
-      html`<p>
-        Hello from current-mul2-component: ${this.numComponent.num * 2}
-      </p>`,
-      this
-    );
+    if (this.loaded) {
+      render(
+        html`<p>
+          Hello from current-mul2-component: ${this.numComponent.num * 2}
+        </p>`,
+        this
+      );
+    }
   }
 
   static get tag() {
@@ -108,18 +112,20 @@ class NumControl extends SprdHTMLElement {
   }
 
   render() {
-    render(
-      html`<p>
-        <button type="button" @click=${() => this.setNum(this.num + 1)}>
-          Inc
-        </button>
-        <button type="button" @click=${() => this.setNum(this.num - 1)}>
-          Del
-        </button>
-        <button type="button" @click=${() => this.setNum(10)}>10</button>
-      </p>`,
-      this
-    );
+    if (this.loaded) {
+      render(
+        html`<p>
+          <button type="button" @click=${() => this.setNum(this.num + 1)}>
+            Inc
+          </button>
+          <button type="button" @click=${() => this.setNum(this.num - 1)}>
+            Del
+          </button>
+          <button type="button" @click=${() => this.setNum(10)}>10</button>
+        </p>`,
+        this
+      );
+    }
   }
 
   static get tag() {

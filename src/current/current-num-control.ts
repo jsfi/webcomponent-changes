@@ -21,18 +21,20 @@ export class NumControl extends SprdHTMLElement {
   }
 
   render() {
-    render(
-      html`<p>
-        <button type="button" @click=${() => this.setNum(this.num + 1)}>
-          Inc
-        </button>
-        <button type="button" @click=${() => this.setNum(this.num - 1)}>
-          Del
-        </button>
-        <button type="button" @click=${() => this.setNum(10)}>10</button>
-      </p>`,
-      this
-    );
+    if (this.loaded) {
+      render(
+        html`<p>
+          <button type="button" @click=${() => this.setNum(this.num + 1)}>
+            Inc
+          </button>
+          <button type="button" @click=${() => this.setNum(this.num - 1)}>
+            Del
+          </button>
+          <button type="button" @click=${() => this.setNum(10)}>10</button>
+        </p>`,
+        this
+      );
+    }
   }
 
   static get tag() {

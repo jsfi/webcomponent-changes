@@ -21,14 +21,16 @@ export class NumComponent extends SprdHTMLElement {
   }
 
   render() {
-    render(
-      html`<p class="${this.block}__text">
-          Hello from current-num-component: ${this._num}
-        </p>
-        <current-mul2-component></current-mul2-component>
-        <current-num-control></current-num-control>`,
-      this
-    );
+    if (this.loaded) {
+      render(
+        html`<p class="${this.block}__text">
+            Hello from current-num-component: ${this._num}
+          </p>
+          <current-mul2-component></current-mul2-component>
+          <current-num-control></current-num-control>`,
+        this
+      );
+    }
   }
 
   static get tag() {

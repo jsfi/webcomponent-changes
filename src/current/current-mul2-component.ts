@@ -14,12 +14,14 @@ class Mul2Component extends SprdHTMLElement {
   }
 
   render() {
-    render(
-      html`<p>
-        Hello from current-mul2-component: ${this.numComponent.num * 2}
-      </p>`,
-      this
-    );
+    if (this.loaded) {
+      render(
+        html`<p>
+          Hello from current-mul2-component: ${this.numComponent.num * 2}
+        </p>`,
+        this
+      );
+    }
   }
 
   static get tag() {
